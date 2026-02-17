@@ -20,7 +20,7 @@ body {
     justify-content: space-evenly !important;
 }
 .map-zoom-out-btn, .search-btn {
-    background-color: #0072B5;
+    background-color: red;
     color: #FFF;
     padding: 10px 35px;
     border: none;
@@ -67,4 +67,5 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
