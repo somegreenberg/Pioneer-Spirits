@@ -1,6 +1,4 @@
 body {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
@@ -11,10 +9,9 @@ body {
     margin: 2.5vh 0;
 }
 #mymap {
-    width: 90vw;
     height: 70vh;
-    margin: 0 5vw 2vh;
-    border: 3px solid #888;
+    margin: 0 0vw 2vh;
+    border: 3px solid red;
 }
 .button-group {
     justify-content: space-evenly !important;
