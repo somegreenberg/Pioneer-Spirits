@@ -26,15 +26,6 @@ document.querySelector(".map-zoom-out-btn").addEventListener("click", () => {
   map.flyTo([41.215, -73.2423303], 14);
 });
 
-document.querySelector(".search-btn").addEventListener("click", () => {
-  let select = document.querySelector(".select-dropdown");
-  let value = select.options[select.selectedIndex].value;
-  map.flyTo(
-    [ourData[value - 1].latitude, ourData[value - 1].longitude],
-    ourData[value - 1].zoomLevel
-  );
-});
-
 
 // Geolocation: https://leafletjs.com/examples/mobile/
 map.locate();
