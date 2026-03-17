@@ -15,3 +15,22 @@ body {
 html, body, #map {
     width: 100vw;
 }
+
+/* Buttons */
+.flex-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-group {
+    justify-content: space-evenly !important;
+}
+.map-zoom-out-btn, .search-btn {
+    background-color: red;
+    color: #FFF;
+    padding: 10px 35px;
+    border: none;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+}
