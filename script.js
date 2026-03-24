@@ -22,10 +22,10 @@ let iconOption = {
 };
 let ourCustomIcon = L.icon(iconOption);
 
+// Button to center on SHU
 document.querySelector(".map-zoom-out-btn").addEventListener("click", () => {
-  map.flyTo([41.215, -73.2423303], 14);
+  map.flyTo([41.215, -73.2423303], 15);
 });
-
 
 // Geolocation: https://leafletjs.com/examples/mobile/
 map.locate();
