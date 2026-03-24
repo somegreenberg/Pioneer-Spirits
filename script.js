@@ -22,17 +22,17 @@ function Location(name, long, lat) {
   this.lat = lat;
 }
 
+const locations = [];
+
 // West Campus
-const martireArena = new Location("Martier Family Arena", 41.217369776796986, -73.25326789091186);
-const alliance = new Location("Alliance Americas", 41.21428933599361, -73.25366284622137);
+locations.push(new Location("Martier Family Arena", 41.217369776796986, -73.25326789091186));
+locations.push(new Location("Alliance Americas", 41.21428933599361, -73.25366284622137));
 
 // Main Campus
-const campusField = new Location("Campus Field", 41.219912297862244, -73.24597648139546);
-const pioneerPark = new Location("Pioneer Park", 41.221602957703645, -73.24640027042267);
-const multiField = new Location("Multi-Sport Turf Field", 41.2256125257203, -73.24481729418737);
-const martireCenter = new Location("Martire Business and Communications Center", 41.2251307569504, -73.24385404597102);
-
-locations = [martireArena, alliance, campusField, pioneerPark, multiField, martireCenter];
+locations.push(new Location("Campus Field", 41.219912297862244, -73.24597648139546));
+locations.push(new Location("Pioneer Park", 41.221602957703645, -73.24640027042267));
+locations.push(new Location("Multi-Sport Turf Field", 41.2256125257203, -73.24481729418737));
+locations.push(new Location("Martire Business and Communications Center", 41.2251307569504, -73.24385404597102));
 
 for(i=0; i<locations.length; i++) {
     L.marker([locations[i].long, locations[i].lat]).addTo(map)
@@ -55,7 +55,9 @@ document.querySelector(".map-zoom-out-btn").addEventListener("click", () => {
 map.locate();
 function onLocationFound(e) {
     var radius = e.accuracy;
-
+    if(radius > 100){radius = 100;}
+    if(radius < 25){radius = 25;}
+    
     L.marker(e.latlng).addTo(map)
         .bindPopup("You are within " + radius + " meters from this point");
 
