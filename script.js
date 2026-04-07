@@ -16,23 +16,24 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   zoomDelta: .175
 }).addTo(map);
 
-function Location(name, long, lat) {
+function Location(name, long, lat, link) {
   this.name = name;
   this.long = long;
   this.lat = lat;
+  this.link = link;
 }
 
 const locations = [];
 
 // West Campus
-locations.push(new Location("Martire Family Arena", 41.217369, -73.253267)); //41.217369776796986, -73.25326789091186
-locations.push(new Location("Alliance Americas", 41.214289, -73.253662)); //41.21428933599361, -73.25366284622137
+locations.push(new Location("Martire Family Arena", 41.217369, -73.253267, "MFA.html")); //41.217369776796986, -73.25326789091186
+locations.push(new Location("Alliance Americas", 41.214289, -73.253662, "AA.html")); //41.21428933599361, -73.25366284622137
 
 // Main Campus
-locations.push(new Location("Campus Field", 41.219912, -73.245976)); //41.219912297862244, -73.24597648139546
-locations.push(new Location("Pioneer Park", 41.221602, -73.246400)); //41.221602957703645, -73.24640027042267
-locations.push(new Location("Multi-Sport Turf Field", 41.225612, -73.244817)); //41.2256125257203, -73.24481729418737
-locations.push(new Location("Martire Business and Communications Center", 41.225130, -73.243854)); //41.2251307569504, -73.24385404597102
+locations.push(new Location("Campus Field", 41.219912, -73.245976, "CF.html")); //41.219912297862244, -73.24597648139546
+locations.push(new Location("Pioneer Park", 41.221602, -73.246400, "PP.html")); //41.221602957703645, -73.24640027042267
+locations.push(new Location("Multi-Sport Turf Field", 41.225612, -73.244817, "MSTF.html")); //41.2256125257203, -73.24481729418737
+locations.push(new Location("Martire Business and Communications Center", 41.225130, -73.243854, "MBCC.html")); //41.2251307569504, -73.24385404597102
 
 for(i=0; i<locations.length; i++) {
     L.marker([locations[i].long, locations[i].lat]).on('click', markerOnClick).addTo(map)
@@ -52,9 +53,18 @@ function markerOnClick(e)
     if("LatLng(" + locations[i].long + ", " + locations[i].lat + ")" == e.latlng) {
       chosenSpotName = locations[i].name;
       chosenSpotDist = map.distance(userLocation.latlng, e.latlng);
+      chosenHTML = locations[i].link;
     }
   }
   alert(chosenSpotName + " is " + Math.round(chosenSpotDist) + " meters away.");
+  
+  if(chosenSpotDist <= 200) { // 200 for testing, final product should be 50
+    //alert("Close Enough");
+    // Update Cookies
+    window.open("pages/" + chosenHTML, '_blank').focus();
+  } else {
+    //alert("Too far away");
+  }
 }
 
 let iconOption = {
