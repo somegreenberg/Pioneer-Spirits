@@ -6,7 +6,9 @@ Pioneer Spirits
 styles.css
 */
 #map {
-    height: 85vh;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
 }
 body {
     padding: 0;
@@ -17,15 +19,18 @@ html, body, #map {
 }
 
 /* Buttons */
-.flex-style {
+.buttons {
     display: flex;
+    z-index: 2;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
     justify-content: center;
     align-items: center;
-}
-.button-group {
     justify-content: space-evenly !important;
 }
-.map-zoom-out-btn, .search-btn {
+.home-btn, .spirits-btn, .save-btn {
     background-color: red;
     color: #FFF;
     padding: 10px 35px;
