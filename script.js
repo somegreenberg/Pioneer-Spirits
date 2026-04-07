@@ -40,6 +40,8 @@ for(i=0; i<locations.length; i++) {
     //.openPopup();
 }
 
+var userLocation = null;
+
 function markerOnClick(e)
 {
   // alert(e.latlng);
@@ -49,14 +51,10 @@ function markerOnClick(e)
   for(i=0; i<locations.length; i++) {
     if("LatLng(" + locations[i].long + ", " + locations[i].lat + ")" == e.latlng) {
       chosenSpotName = locations[i].name;
-      //console.log("Lat is " + locations[i].lat);    //Lattitude of chosen location
-      //console.log("Long is " + locations[i].long);  //Longitude of chosen locations
-      //console.log("e lat is "+ e.lat);              //Lattitude of user location (not really, but I want it to be)
-      //console.log("e long is "+ e.long);            //Longitude of user location (not really, but I want it to be)
-      chosenSpotDist = Math.sqrt(((Number(e.lat) - Number(locations[i].lat))^2) + ((Number(e.long) - Number(locations[i].long))^2)); //Pythagorean Theorem
+      chosenSpotDist = map.distance(userLocation.latlng, e.latlng);
     }
   }
-  alert(chosenSpotName + " is " + chosenSpotDist + " units away.");
+  alert(chosenSpotName + " is " + Math.round(chosenSpotDist) + " meters away.");
 }
 
 let iconOption = {
@@ -81,6 +79,7 @@ function onLocationFound(e) {
         .bindPopup("You are within " + radius + " meters from this point");
 
     L.circle(e.latlng, radius).addTo(map);
+    userLocation = e;
 }
 map.on('locationfound', onLocationFound);
 function onLocationError(e) {
