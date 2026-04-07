@@ -47,7 +47,7 @@ let iconOption = {
 let ourCustomIcon = L.icon(iconOption);
 
 // Button to center on SHU
-document.querySelector(".map-zoom-out-btn").addEventListener("click", () => {
+document.querySelector(".home-btn").addEventListener("click", () => {
   map.flyTo([41.215, -73.2423303], 15);
 });
 
