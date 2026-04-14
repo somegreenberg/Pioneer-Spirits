@@ -21,6 +21,7 @@ function Location(name, long, lat, link) {
   this.long = long;
   this.lat = lat;
   this.link = link;
+  //this.visited = false;
 }
 
 const locations = [];
@@ -36,6 +37,7 @@ locations.push(new Location("Multi-Sport Turf Field", 41.225612, -73.244817, "MS
 locations.push(new Location("Martire Business and Communications Center", 41.225130, -73.243854, "MBCC.html")); //41.2251307569504, -73.24385404597102
 
 for(i=0; i<locations.length; i++) {
+    // if(is in cookies) {visited = true;}
     L.marker([locations[i].long, locations[i].lat]).on('click', markerOnClick).addTo(map)
     .bindPopup(locations[i].name);
     //.openPopup();
@@ -58,10 +60,10 @@ function markerOnClick(e)
   }
   alert(chosenSpotName + " is " + Math.round(chosenSpotDist) + " meters away.");
   
-  if(chosenSpotDist <= 200) { // 200 for testing, final product should be 50
-    //alert("Close Enough");
+  if(chosenSpotDist <= 200) { // 200 is for testing, final product should be 50
+    // alert("Close Enough");
     // Update Cookies
-    window.open("pages/" + chosenHTML, '_blank').focus();
+    window.open("pages/" + chosenHTML, '_self').focus();
   } else {
     //alert("Too far away");
   }
