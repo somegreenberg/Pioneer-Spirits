@@ -33,7 +33,7 @@ locations.push(new Location("Guest House", 41.214289, -73.253662, "GH.html")); /
 // Main Campus
 locations.push(new Location("Campus Field", 41.219912, -73.245976, "CF.html")); //41.219912297862244, -73.24597648139546
 locations.push(new Location("Pioneer Park", 41.221602, -73.246400, "PP.html")); //41.221602957703645, -73.24640027042267
-locations.push(new Location("Multi-Sport Turf Field", 41.225612, -73.244817, "MSTF.html")); //41.2256125257203, -73.24481729418737
+locations.push(new Location("Veteran's Park", 41.225483, -73.245801, "VP.html")); //41.22548316734082, -73.24580145116454
 locations.push(new Location("Martire Business and Communications Center", 41.225130, -73.243854, "MBCC.html")); //41.2251307569504, -73.24385404597102
 
 for(i=0; i<locations.length; i++) {
@@ -63,7 +63,6 @@ function markerOnClick(e)
   if(chosenSpotDist <= 200) { // 200 is for testing, final product should be 50
     // alert("Close Enough");
     // Update Cookies
-    document.cookie = chosenHTML +"=1; path=/";
     window.open("pages/" + chosenHTML, '_self').focus();
   } else {
     //alert("Too far away");
