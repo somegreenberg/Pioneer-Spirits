@@ -28,7 +28,7 @@ const locations = [];
 
 // West Campus
 locations.push(new Location("Martire Family Arena", 41.217369, -73.253267, "MFA.html")); //41.217369776796986, -73.25326789091186
-locations.push(new Location("Alliance Americas", 41.214289, -73.253662, "AA.html")); //41.21428933599361, -73.25366284622137
+locations.push(new Location("Guest House", 41.214289, -73.253662, "GH.html")); //41.21428933599361, -73.25366284622137
 
 // Main Campus
 locations.push(new Location("Campus Field", 41.219912, -73.245976, "CF.html")); //41.219912297862244, -73.24597648139546
