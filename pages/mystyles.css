@@ -1,7 +1,59 @@
-			h1	{ color		: purple;
-				  font-size	: 42pt;
-				  font-family	: Harrington;
-				  text-align	: center; }
-			p	{ color		: darkblue;
-				  font-size	: 14pt;
-				  font-family	: trebuchet MS, tahoma; }
+/* 
+Adam Aouassar, Sam Greenberg
+ITI 418
+Spring 2026
+Pioneer Spirits
+styles.css
+*/
+#map {
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+html, body, #map {
+    width: 100vw;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    z-index: 2;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly !important;
+}
+.home-btn, .spirits-btn, .save-btn {
+    background-color: red;
+    color: #FFF;
+    padding: 10px 35px;
+    border: none;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+/*
+a {
+    color: white;
+    text-decoration: none;
+}
+*/
+h1	{
+    color		: purple;
+	font-size	: 42pt;
+	font-family	: Harrington;
+	text-align	: center;
+}
+p	{
+    color		: darkblue;
+	font-size	: 14pt;
+	font-family	: trebuchet MS, tahoma;
+}
