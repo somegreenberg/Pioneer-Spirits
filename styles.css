@@ -25,7 +25,7 @@ html, body, #map {
     top: 95%;
     left: 50%;
     transform: translate(-50%, -50%);
-    position: absolute;
+    position: fixed;
     justify-content: center;
     align-items: center;
     justify-content: space-evenly !important;
