@@ -6,7 +6,7 @@ script.js
 */
 
 // Initiate Map
-let map = L.map("map").setView([41.219, -73.2423303], 15);
+let map = L.map("map").setView([41.219709, -73.248758], 15);
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: "&copy; OpenStreetMap contributors",
   maxZoom: 20,
