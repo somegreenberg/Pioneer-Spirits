@@ -63,6 +63,7 @@ function markerOnClick(e)
   if(chosenSpotDist <= 200) { // 200 is for testing, final product should be 50
     // alert("Close Enough");
     // Update Cookies
+    document.cookie = chosenHTML +"=1; path=/";
     window.open("pages/" + chosenHTML, '_self').focus();
   } else {
     //alert("Too far away");
