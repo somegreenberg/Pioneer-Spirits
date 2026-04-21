@@ -17,7 +17,10 @@ body {
 html, body, #map {
     width: 100vw;
 }
-
+img {
+    width: 100vw;
+    max-width: 500px;
+}
 /* Buttons */
 .buttons {
     display: flex;
