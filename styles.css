@@ -38,4 +38,9 @@ html, body, #map {
     font-size: 17px;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+}
+a {
+    color: white;
+    text-decoration: none;
 }
