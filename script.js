@@ -77,7 +77,7 @@ let ourCustomIcon = L.icon(iconOption);
 
 // Button to center on SHU
 document.querySelector(".home-btn").addEventListener("click", () => {
-  map.flyTo([41.215, -73.2423303], 15);
+  map.flyTo([41.219709, -73.248758], 15);
 });
 
 // Geolocation: https://leafletjs.com/examples/mobile/
