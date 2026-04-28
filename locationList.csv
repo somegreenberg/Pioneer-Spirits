@@ -1,6 +1,7 @@
-"Martire Family Arena", 41.217369, -73.253267, "MFA.html"
-"Guest House", 41.214289, -73.253662, "GH.html"
-"Campus Field", 41.219912, -73.245976, "CF.html"
-"Pioneer Park", 41.221602, -73.246400, "PP.html"
-"Veteran's Park", 41.225483, -73.245801, "VP.html"
-"Martire Business and Communications Center", 41.225130, -73.243854, "MBCC.html"
+Title,Latitude,Longitude,Page
+"Martire Family Arena",41.217369,-73.253267,"MFA.html"
+"Guest House",41.214289,-73.253662,"GH.html"
+"Campus Field",41.219912,-73.245976,"CF.html"
+"Pioneer Park",41.221602,-73.246400,"PP.html"
+"Veteran's Park",41.225483,-73.245801,"VP.html"
+"Martire Business and Communications Center",41.225130,-73.243854,"MBCC.html"
