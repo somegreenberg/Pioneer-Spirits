@@ -16,50 +16,38 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   zoomDelta: .175
 }).addTo(map);
 
-function Location(name, long, lat, link) {
-  this.name = name;
-  this.long = long;
-  this.lat = lat;
-  this.link = link;
-  //this.visited = false;
+let locations = [];
+
+async function loadCSV() {
+    const response = await fetch('locationList.csv');
+    const text = await response.text();
+  
+    locations = Papa.parse(text, { header: true });
+    locations.data.forEach(function(row) {
+	console.log(row.Title, row.Page);
+	L.marker([parseFloat(row.Latitude), parseFloat(row.Longitude)])
+	.on('click', function(e) {
+	    markerOnClick(e, row);
+	})
+	.addTo(map)
+	.bindPopup(row.Title);
+    });
 }
-
-const locations = [];
-
-// West Campus
-locations.push(new Location("Martire Family Arena", 41.217369, -73.253267, "MFA.html")); //41.217369776796986, -73.25326789091186
-locations.push(new Location("Guest House", 41.214289, -73.253662, "GH.html")); //41.21428933599361, -73.25366284622137
-
-// Main Campus
-locations.push(new Location("Campus Field", 41.219912, -73.245976, "CF.html")); //41.219912297862244, -73.24597648139546
-locations.push(new Location("Pioneer Park", 41.221602, -73.246400, "PP.html")); //41.221602957703645, -73.24640027042267
-locations.push(new Location("Veteran's Park", 41.225483, -73.245801, "VP.html")); //41.22548316734082, -73.24580145116454
-locations.push(new Location("Martire Business and Communications Center", 41.225130, -73.243854, "MBCC.html")); //41.2251307569504, -73.24385404597102
-
-for(i=0; i<locations.length; i++) {
-    // if(is in cookies) {visited = true;}
-    L.marker([locations[i].long, locations[i].lat]).on('click', markerOnClick).addTo(map)
-    .bindPopup(locations[i].name);
-    //.openPopup();
-}
+loadCSV();
 
 var userLocation = null;
 
-function markerOnClick(e)
+function markerOnClick(e, row)
 {
   // alert(e.latlng);
   // alert("LatLng("+locations[0].long+", "+locations[0].lat+")");
-  chosenSpotName = "Not Found";
-  chosenSpotDist = 0;
-  for(i=0; i<locations.length; i++) {
-    if("LatLng(" + locations[i].long + ", " + locations[i].lat + ")" == e.latlng) {
-      chosenSpotName = locations[i].name;
-      chosenSpotDist = map.distance(userLocation.latlng, e.latlng);
-      chosenHTML = locations[i].link;
-    }
-  }
+  const chosenSpotName = row.Title;
+  const chosenHTML = row.Page;
+  const chosenSpotDist = map.distance(userLocation.latlng, e.latlng);
+  
   alert(chosenSpotName + " is " + Math.round(chosenSpotDist) + " meters away.");
   
+  // window.open("pages/" + chosenHTML, '_self').focus();
   if(chosenSpotDist <= 200) { // 200 is for testing, final product should be 50
     // alert("Close Enough");
     // Update Cookies
