@@ -9,13 +9,23 @@ styles.css
     height: 100vh;
     position: relative;
     z-index: 1;
+    width: 100vw;
 }
 body {
+    min-width: 2px;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
 }
-html, body, #map {
-    width: 100vw;
+section {
+    background-color: #fff2cc;
+    margin: 0px auto;
+    min-width: 320px;
+    max-width: 1024px;
+    width: 100%;
+}
+
+html {
+    background-color: #111;
 }
 img {
     width: 100vw;
@@ -43,18 +53,32 @@ img {
     cursor: pointer;
     font-weight: bold;
 }
-a {
+#buttons a {
     color: white;
     text-decoration: none;
 }
 h1	{
-    color		: purple;
-	font-size	: 42pt;
-	font-family	: Harrington;
-	text-align	: center;
+    color		: red;
+    font-size	: 42pt;
+    font-family	: Harrington;
+    text-align	: center;
 }
 p	{
     color		: darkblue;
-	font-size	: 14pt;
-	font-family	: trebuchet MS, tahoma;
+    font-size	: 14pt;
+    font-family	: trebuchet MS, tahoma;
+}
+h1, h2 {
+    font-family	:'Epunda Slab'
+}
+p, h2{
+    padding-left: 30px;
+}
+
+/* Collection Screen */
+.locked {
+    filter: brightness(30%);
+}
+#spirits {
+
 }
