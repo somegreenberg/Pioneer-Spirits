@@ -30,8 +30,10 @@ html {
     background-color: #111;
 }
 img {
-    width: 100vw;
+    width: 100%;
     max-width: 500px;
+    height: auto;
+    display: block;
 }
 /* Buttons */
 .buttons {
@@ -70,13 +72,13 @@ p	{
     color		: darkblue;
     font-size	: 14pt;
     font-family	: trebuchet MS, tahoma;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 h1, h2 {
     font-family	:'Epunda Slab'
 }
-p, h2{
-    padding-left: 30px;
-}
+
 
 /* Collection Screen */
 .locked {
