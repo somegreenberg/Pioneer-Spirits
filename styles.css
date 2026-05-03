@@ -16,12 +16,14 @@ body {
     padding: 0;
     margin: 0 auto;
 }
-section {
+section, #content {
     background-color: #fff2cc;
     margin: 0px auto;
     min-width: 320px;
     max-width: 1024px;
     width: 100%;
+    padding: 0;
+    margin: 0 auto;
 }
 
 html {
@@ -62,6 +64,7 @@ h1	{
     font-size	: 42pt;
     font-family	: Harrington;
     text-align	: center;
+    margin: 0 auto;
 }
 p	{
     color		: darkblue;
@@ -80,5 +83,5 @@ p, h2{
     filter: brightness(30%);
 }
 #spirits {
-
+    align-items: center;
 }
