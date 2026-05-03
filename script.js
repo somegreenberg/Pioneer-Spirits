@@ -18,6 +18,12 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 let locations = [];
 
+const customIcon = L.icon({
+    iconUrl: 'favicon.png',
+    iconSize: [64, 64],
+    iconAnchor: [32, 56]
+});
+
 async function loadCSV() {
     const response = await fetch('locationList.csv');
     const text = await response.text();
@@ -25,7 +31,9 @@ async function loadCSV() {
     locations = Papa.parse(text, { header: true });
     locations.data.forEach(function(row) {
 	console.log(row.Title, row.Page);
-	L.marker([parseFloat(row.Latitude), parseFloat(row.Longitude)])
+	L.marker([parseFloat(row.Latitude), parseFloat(row.Longitude)],
+	    { icon: customIcon }
+	)
 	.on('click', function(e) {
 	    markerOnClick(e, row);
 	})
