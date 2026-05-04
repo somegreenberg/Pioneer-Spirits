@@ -53,10 +53,10 @@ function markerOnClick(e, row)
   const chosenHTML = row.Page;
   const chosenSpotDist = map.distance(userLocation.latlng, e.latlng);
   
-  alert(chosenSpotName + " is " + Math.round(chosenSpotDist) + " meters away.");
+  //alert(chosenSpotName + " is " + Math.round(chosenSpotDist) + " meters away.");
   
   // window.open("pages/" + chosenHTML, '_self').focus();
-  if(chosenSpotDist <= 200) { // 200 is for testing, final product should be 50
+  if(chosenSpotDist <= 200) {
     // alert("Close Enough");
     // Update Cookies
     document.cookie = chosenHTML +"=1; path=/";
