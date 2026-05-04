@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <!--Adam Aouassar, Sam Greenberg
 ITI 418
 Spring 2026
@@ -12,11 +11,19 @@ save.html
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="icon" type="image/x-icon" href="favicon.png">
     </head>
-    <body><section>
-	<h1>Pioneer Spirits Save Data</h1>
+    <body><section><center>
+	<h1>Pioneer Spirits Save Data</h1><br>
 	
+	<input id="input">
+	<button id="load" onclick="load()">Load Save</button><br><br>
 	
+	<button id="copy" onclick="copy()">Copy Current Save</button><br><br>
+	
+	<button id="reset" onclick="reset()">Reset Save</button>
+	
+	<p id="output"></p>
 	
 	<div class="buttons">
             <a href="spirits.html"><button class="spirits-btn">Spirits</button></a>
@@ -24,6 +31,8 @@ save.html
             <a href="save.html"><button class="save-btn">Save</button></a>
         </div>
         
-        <script type="text/javascript" src="spirits.js"></script>
-    </section></body>
+    </center></section>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    </body>
 </html>
