@@ -46,7 +46,8 @@ async function render_spirits() {
 	    render.innerHTML += `
 		<img src="pages/images/${short}.jpg" class="locked">`;
 	}
+	
+	render.innerHTML += "_____<br>";
     });
 };
 render_spirits();
-
